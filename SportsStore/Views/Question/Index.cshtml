@@ -1,0 +1,17 @@
+﻿@model List<QuestionModel>
+
+<h1>It is Question Page</h1>
+
+@using (Html.BeginForm())
+{
+    foreach (var question in Model)
+    {
+        <div>
+            <label>@question.QuestionText</label>
+            <input type="text" name="answers" />
+            <input type="hidden" name="questionIds" value="@question.QuestionId" />
+        </div>
+    }
+
+    <input type="submit" value="Submit" />
+}
